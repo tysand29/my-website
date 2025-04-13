@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basketball Quiz Game</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      color: #004080;
+    }
+    .question-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+    .question {
+      font-size: 1.2rem;
+    }
+    .answer-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .answer-button:hover {
+      background-color: #0066cc;
+    }
+    .score {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Basketball Quiz Game</h1>
+  
+  <div class="question-container">
+    <div class="question" id="question">Loading question...</div>
+    <button class="answer-button" id="answer1"></button>
+    <button class="answer-button" id="answer2"></button>
+    <button class="answer-button" id="answer3"></button>
+    <button class="answer-button" id="answer4"></button>
+    <div class="score" id="score">Score: 0</div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "Who is known as 'The King' in basketball?",
+        answers: ["Michael Jordan", "LeBron James", "Kobe Bryant", "Magic Johnson"],
+        correct: 1
+      },
+      {
+        question: "Which team won the 2020 NBA Championship?",
+        answers: ["Golden State Warriors", "Los Angeles Lakers", "Miami Heat", "Toronto Raptors"],
+        correct: 1
+      },
+      {
+        question: "Who has the most points in NBA history?",
+        answers: ["Kareem Abdul-Jabbar", "LeBron James", "Karl Malone", "Michael Jordan"],
+        correct: 0
+      },
+      {
+        question: "Which NBA player is known for the 'Skyhook' shot?",
+        answers: ["Shaquille O'Neal", "Kareem Abdul-Jabbar", "Tim Duncan", "Dwight Howard"],
+        correct: 1
+      },
+      {
+        question: "Which team did Michael Jordan play for in his final NBA season?",
+        answers: ["Chicago Bulls", "Washington Wizards", "Los Angeles Lakers", "Miami Heat"],
+        correct: 1
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const question = questions[currentQuestionIndex];
+      document.getElementById("question").textContent = question.question;
+      document.getElementById("answer1").textContent = question.answers[0];
+      document.getElementById("answer2").textContent = question.answers[1];
+      document.getElementById("answer3").textContent = question.answers[2];
+      document.getElementById("answer4").textContent = question.answers[3];
+    }
+
+    function handleAnswer(selectedIndex) {
+      const question = questions[currentQuestionIndex];
+      if (selectedIndex === question.correct) {
+        score++;
+        alert("Correct!");
+      } else {
+        alert("Wrong answer!");
+      }
+
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        alert(`Game Over! Your final score is ${score}`);
+        currentQuestionIndex = 0;
+        score = 0;
+        loadQuestion();
+      }
+
+      document.getElementById("score").textContent = `Score: ${score}`;
+    }
+
+    document.getElementById("answer1").addEventListener("click", () => handleAnswer(0));
+    document.getElementById("answer2").addEventListener("click", () => handleAnswer(1));
+    document.getElementById("answer3").addEventListener("click", () => handleAnswer(2));
+    document.getElementById("answer4").addEventListener("click", () => handleAnswer(3));
+
+    loadQuestion();
+  </script>
+  
+</body>
+</html>

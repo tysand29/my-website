@@ -1,0 +1,72 @@
+body {
+    background-color: #f2f7ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  /* Header Bar */
+  #header {
+    background: linear-gradient(to right, #0057b8, #00a6ed);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Main Content Container */
+  #content {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  /* Footer Area */
+  #footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9em;
+    margin-top: 40px;
+  }
+  
+  /* Link Styling */
+  a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: #004b8d;
+    text-decoration: underline;
+  }
+  
+  /* Images in List */
+  ol img {
+    border-radius: 50%;
+    border: 2px solid #007acc;
+    vertical-align: middle;
+  }
+  
+  /* Bonus: Button Style (if you want to use buttons) */
+  .button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #005fa3;
+  }
