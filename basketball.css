@@ -38,13 +38,13 @@ body {
   
   /* Link Styling */
   a {
-    color: #007acc;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
   }
   
   a:hover {
-    color: #004b8d;
+    color: #f0f0f0;
     text-decoration: underline;
   }
   
