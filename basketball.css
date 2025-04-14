@@ -16,6 +16,18 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Style only header link to be white */
+#header .header-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#header .header-link:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
 /* Main Content Container */
 #content {
     padding: 40px 20px;
@@ -36,15 +48,15 @@ body {
     margin-top: 40px;
 }
 
-/* Link Styling */
+/* Normal link style for in-page links and buttons */
 a {
-    color: #fff;
+    color: #007acc;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
-    color: #f0f0f0;
+    color: #004b8d;
     text-decoration: underline;
 }
 
@@ -55,10 +67,10 @@ ol img {
     vertical-align: middle;
 }
 
-/* Button Style */
+/* Button Style (if using buttons) */
 .button {
-    background-color: #007acc; /* Blue background */
-    color: white; /* White text */
+    background-color: #007acc;
+    color: white;
     padding: 10px 18px;
     border: none;
     border-radius: 8px;
@@ -70,6 +82,7 @@ ol img {
 }
 
 .button:hover {
-    background-color: #005fa3; /* Darker blue on hover */
-    color: #ffffff; /* Ensure text stays white on hover */
+    background-color: #005fa3;
+    color: white;
 }
+
